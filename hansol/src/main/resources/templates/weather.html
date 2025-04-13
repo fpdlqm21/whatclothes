@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>현재 날씨 정보</title>
+</head>
+<body>
+<h1>🌦️ 현재 날씨 정보</h1>
+
+<div th:if="${weatherData}">
+  <p>🌡️ 기온: <span th:text="${weatherData.temperature}"></span></p>
+  <p>🌧️ 강수확률: <span th:text="${weatherData.rain}"></span></p>
+  <p>날씨: <span th:text="${weatherData.weatherType}"></span></p>
+</div>
+
+<div th:if="${weatherData.temperature == 'N/A'}">
+  <p style="color: red;">⛔ 데이터를 불러올 수 없습니다.</p>
+</div>
+</body>
+</html>
